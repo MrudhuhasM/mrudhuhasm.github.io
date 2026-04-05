@@ -335,7 +335,7 @@ RNNs perform significantly better than CNNs in this case, likely due to their ab
 
 The poor performance of the CNN model is expected, we may see improvement by using n-grams instead of single words
 
-![rnn](images/loss_accuracy.png)
+![rnn](/images/loss_accuracy.png)
 
 ---
 

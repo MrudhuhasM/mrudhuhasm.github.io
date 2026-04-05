@@ -94,7 +94,7 @@ plt.gca().spines[['top','right']].set_visible(False)
 
 ```
 
-![Scatter plot of synthetic regression data](images/simple_linear_reg_2_0.png)*Blue dots: 5,000 synthetic observations. The diagonal grouping shows the underlying linear pattern, while vertical dispersion represents noise – reflecting real-world unpredictability.*
+![Scatter plot of synthetic regression data](/images/simple_linear_reg_2_0.png)*Blue dots: 5,000 synthetic observations. The diagonal grouping shows the underlying linear pattern, while vertical dispersion represents noise – reflecting real-world unpredictability.*
 
   
 
@@ -282,7 +282,7 @@ plt.plot(X, regression_line_estimate, 'r--', linewidth=1.8,
 
 ```
 
-![Regression line comparison](images/simple_linear_reg_7_0.png)*Green: The hidden relationship. Red dashes: Our estimate from data. Their near-overlap visually confirms OLS effectiveness at scale.*
+![Regression line comparison](/images/simple_linear_reg_7_0.png)*Green: The hidden relationship. Red dashes: Our estimate from data. Their near-overlap visually confirms OLS effectiveness at scale.*
 
   
 
@@ -525,7 +525,7 @@ plt.plot(X, regression_line_estimate, 'r-', linewidth=1.5, alpha=0.9)
 
 ```
 
-![Model fit assessment visualization](images/simple_linear_reg_14_1.png)*The R²=0.68 indicates a **moderate-to-strong model fit** – capturing 68% of target variance. This quantitative assessment aligns with our visual impression of point clustering around the regression line.*
+![Model fit assessment visualization](/images/simple_linear_reg_14_1.png)*The R²=0.68 indicates a **moderate-to-strong model fit** – capturing 68% of target variance. This quantitative assessment aligns with our visual impression of point clustering around the regression line.*
 
   
 

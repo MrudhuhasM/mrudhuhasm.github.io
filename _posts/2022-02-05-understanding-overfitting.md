@@ -16,7 +16,7 @@ To illustrate overfitting, let's start with a simple regression problem. Suppose
 
 We generate synthetic data using the function $\sin(2\pi x)$ with some added Gaussian noise. Below is a plot of 50 data points generated using this process:
 
-![initial generated data](images/initial_generated_data.png)
+![initial generated data](/images/initial_generated_data.png)
 
 Our goal is to use this training set to predict the value $\hat{t}$ of the target variable for some new value $\hat{x}$ of the input variable. This involves implicitly trying to discover the underlying function $\sin(2\pi x)$.
 
@@ -44,11 +44,11 @@ To understand overfitting, we examine how the order of the polynomial affects mo
 
 We start by dividing our data into training and test sets. The training set is used to fit the model, while the test set is used to evaluate the model's performance.
 
-![training and test data](images/train_test_data.png)
+![training and test data](/images/train_test_data.png)
 
 By fitting polynomials of varying orders to the training data and using the mean squared error (MSE) as our evaluation metric, we can observe how the model's complexity impacts its performance.
 
-![polynomial fits](images/polynomial_fits.png)
+![polynomial fits](/images/polynomial_fits.png)
 
 As the order of the polynomial increases, the model becomes more complex and fits the training data more closely. However, this increased complexity may lead to overfitting, where the model captures noise in the training data instead of the underlying pattern. In the plot above, the polynomial of order 9 oscillates excessively to capture the noise, whereas the polynomial of order 1 is too simple to capture the underlying pattern. The polynomial of order 3, on the other hand, seems to strike a balance by capturing the underlying pattern effectively.
 
@@ -58,7 +58,7 @@ To further analyze the impact of polynomial order on model performance, we plot 
 
 We use the root mean squared error (RMSE) as a metric for evaluating model performance, defined as the square root of the average of the squared differences (MSE) between the predicted values and the true values.
 
-![rmse vs polynomial order](images/rmse_vs_order.png)
+![rmse vs polynomial order](/images/rmse_vs_order.png)
 
 The plot above shows that the test error is minimized for a polynomial of order 3, which captures the underlying pattern without overfitting the training data. This demonstrates the trade-off between model complexity and generalization performance and highlights the importance of choosing the appropriate model complexity to avoid overfitting.
 
@@ -95,7 +95,7 @@ As the polynomial order increases, the magnitude of the coefficients generally b
 
 One way to reduce overfitting is to use more data. As the number of data points increases, the model has more information to learn the underlying pattern, reducing the likelihood of overfitting. We can observe this by generating more data points and fitting polynomials of different orders to the new data.
 
-![more data](images/polynomial_fits_more_data.png)
+![more data](/images/polynomial_fits_more_data.png)
 
 With more data points, the polynomial of order 9 fits the data more closely without overfitting, as it has more information to learn the underlying pattern. This highlights the importance of having sufficient data to train complex models.
 
@@ -115,7 +115,7 @@ Here, $\lambda$ is the regularization parameter that controls the strength of th
 
 To see how regularization affects model complexity, we apply L2 regularization with different values of $\lambda$ to the polynomial of order 9 from the initial data:
 
-![regularization](images/ridge_regression.png)
+![regularization](/images/ridge_regression.png)
 
 As $\lambda$ increases, the model becomes simpler and less prone to overfitting, as the penalty term discourages large coefficients. This demonstrates how regularization can help reduce overfitting and promote simpler models that generalize well.
 
