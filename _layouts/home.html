@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="home-bio">
+  <h1>{{ site.title }}</h1>
+  <p>Machine Learning Engineer with 7+ years specializing in NLP, Large Language Models, and production AI systems. Building and deploying solutions across the stack — from training and fine-tuning transformers to cloud-native microservices.</p>
+  <div class="bio-links">
+    <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.kaggle.com/{{ site.social.kaggle }}" target="_blank" rel="noopener">Kaggle</a>
+    <a href="https://x.com/{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter</a>
+    <a href="mailto:{{ site.author.email }}">Email</a>
+  </div>
+</div>
+
+<p class="post-list-heading">Writing</p>
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <span class="post-date">{{ post.date | date: "%b %Y" }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
