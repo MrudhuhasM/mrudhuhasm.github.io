@@ -5,8 +5,7 @@ tags: [linear-regression, statistics, python, machine-learning]
 description: "Step-by-step guide to simple linear regression: implementing OLS estimation, hypothesis testing, and model evaluation from scratch"
 math: true
 ---
-dg-publish: true
----
+
   
 >When we predict product sales based on advertising spend, we instinctively seek that straight-line relationship in our data. Simple linear regression quantifies this intuition – transforming visual patterns into mathematical certainty. As data scientists, we need to master its inner workings to validate assumptions and interpret predictions correctly. Walk alongside me as we implement regression from scratch, revealing what happens beneath the surface of every scikit-learn `.fit()` call.
 

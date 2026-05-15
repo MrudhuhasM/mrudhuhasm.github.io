@@ -5,9 +5,7 @@ tags: [computer-vision, image-similarity, resnet, nearest-neighbors]
 description: "Building an image similarity search system using ResNet50 feature extraction and k-nearest neighbors"
 math: true
 ---
-dg-permalink: image-similarity-resnet-nearest-neighbors
-description: Building an image similarity search system using ResNet50 feature extraction and k-nearest neighbors
----
+
 
 # Image Similarity Search with ResNet and Nearest Neighbors
 

@@ -5,11 +5,7 @@ tags: [rag, langgraph, nlp, llm, vector-databases]
 description: "Deep dive into building a production-ready agentic RAG system with hybrid search, multi-step reasoning, and intelligent answer validation"
 math: true
 ---
-dg-home: false
-dg-publish: true
-dg-permalink: building-production-grade-agentic-rag-system
-description: Deep dive into building a production-ready agentic RAG system with hybrid search, multi-step reasoning, and intelligent answer validation
----
+
 
 # Building a Production-Grade Agentic RAG System
 

@@ -4,9 +4,6 @@ date: 2024-03-01
 tags: [nlp, sentiment-analysis, word2vec, fasttext, word-embeddings]
 description: "Comparing traditional bag-of-words with modern word embedding approaches for sentiment classification"
 ---
-dg-permalink: sentiment-analysis-bow-to-embeddings
-description: Comparing traditional bag-of-words with modern word embedding approaches for movie review sentiment classification
----
 
 # Sentiment Analysis: From Bag of Words to Word Embeddings
 

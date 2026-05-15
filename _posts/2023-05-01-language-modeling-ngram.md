@@ -5,23 +5,9 @@ tags: [nlp, language-modeling, n-gram, statistics]
 description: "Understanding statistical language modeling with N-grams"
 math: true
 ---
-dg-publish: true
-dg-permalink: language-modeling-n-gram
-description: Understanding N-gram Language modeling
----
 
 # Language Modeling - N-gram
 
-<div></div>
-
-<div class="article-meta">
-  <span class="article-category">Natural Language Processing</span>
-  <span class="reading-time" title="Estimated read time">
-    • 10 min read
-  </span>
-</div>
-
-<div class="article-content">
 
 In this blog, we'll explore the foundations of n-gram models, how they work, their strengths and limitations, and how they compare to more sophisticated approaches. Understanding these classical techniques provides valuable insights into the evolution of language modeling and why more advanced models were developed.
 
