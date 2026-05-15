@@ -1,10 +1,12 @@
 ---
-title: "(1) Text classification from BOW to Transformers"
+title: "Text classification from BOW to Transformers"
 date: 2024-01-10
 categories: [Natural_Language_Processing, Text_Classification]
 tags: [machine-learning, text-classification, natural-language-processing]
 comments: false
 math: true
+series: "Text Classification"
+series_part: 1
 ---
 
 # Text Classification: From Bag of Words (BOW) to Transformers

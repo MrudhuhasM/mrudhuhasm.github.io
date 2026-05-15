@@ -1,10 +1,12 @@
 ---
-title: "(2) Text classification from BOW to Transformers"
+title: "Pre-trained Models, Zero-Shot, and Prompt-Based Classification"
 date: 2024-01-13
 categories: [Natural_Language_Processing, Text_Classification]
 tags: [machine-learning, text-classification, natural-language-processing]
 comments: false
 math: true
+series: "Text Classification"
+series_part: 2
 ---
 
 In our previous post, we covered how to preprocess text data and prepare it for machine learning models. Now, we will take the next step in text classification by building models using pre-trained language models and embeddings, exploring techniques like **zero-shot classification**, **embeddings-based classification**, and **prompt-based classification** using generative models. By the end of this post, you'll have a deeper understanding of how to leverage state-of-the-art NLP models to build robust text classification systems. We’ll also evaluate their performance using real-world data.

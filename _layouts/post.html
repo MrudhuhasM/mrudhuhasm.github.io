@@ -20,15 +20,40 @@ layout: default
   </header>
 
   <div class="post-content">
-    {{ content }}
+    {% if page.series %} {% assign series_members = site.posts | where:
+    "series", page.series | sort: "series_part" %} {% assign series_count =
+    series_members | size %}
+    <div class="series-nav">
+      <p class="series-nav-title">
+        {{ page.series }}
+        <span class="series-nav-count">{{ series_count }}-part series</span>
+      </p>
+      <ol class="series-nav-list">
+        {% for part in series_members %} {% if part.url == page.url %}
+        <li class="series-nav-current">
+          <span>Part {{ part.series_part }}: {{ part.title }}</span>
+        </li>
+        {% else %}
+        <li>
+          <a href="{{ part.url | relative_url }}"
+            >Part {{ part.series_part }}: {{ part.title }}</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ol>
+    </div>
+    {% endif %} {{ content }}
   </div>
 
   <nav class="post-nav">
     {% if page.previous.url %}
-    <a href="{{ page.previous.url | relative_url }}" class="nav-newer">← {{ page.previous.title }}</a>
-    {% endif %}
-    {% if page.next.url %}
-    <a href="{{ page.next.url | relative_url }}" class="nav-older">{{ page.next.title }} →</a>
+    <a href="{{ page.previous.url | relative_url }}" class="nav-newer"
+      >← {{ page.previous.title }}</a
+    >
+    {% endif %} {% if page.next.url %}
+    <a href="{{ page.next.url | relative_url }}" class="nav-older"
+      >{{ page.next.title }} →</a
+    >
     {% endif %}
   </nav>
 </article>
