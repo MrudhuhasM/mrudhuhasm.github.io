@@ -162,8 +162,8 @@ The warmup call compiles the kernel and exposes `n_regs` and `size_smem`. From t
 
 ### Varying N (columns), M = 4096 fixed
 
-![Performance vs columns (log scale)](softmax-performance-cols.png)
-![Performance vs columns (linear scale)](softmax-performance.png)
+![Performance vs columns (log scale)](/images/softmax-performance-cols.png)
+![Performance vs columns (linear scale)](/images/softmax-performance.png)
 
 | N | Triton (GB/s) | Torch Compiled (GB/s) | Naive (GB/s) | Persistent (GB/s) |
 |---|---|---|---|---|
@@ -186,7 +186,7 @@ Naive sits flat at 54–60 GB/s the whole way — about 4× slower — completel
 
 ### Varying M (rows), N = 4096 fixed
 
-![Performance vs rows (log scale)](softmax-performance-rows.png)
+![Performance vs rows (log scale)](/images/softmax-performance-rows.png)
 
 | M | Triton (GB/s) | Torch Compiled (GB/s) | Naive (GB/s) | Persistent (GB/s) |
 |---|---|---|---|---|
@@ -205,7 +205,7 @@ The interesting thing at low M is that persistent actually trails non-persistent
 
 ### Latency
 
-![Latency vs rows](softmax-performance-latency.png)
+![Latency vs rows](images/softmax-performance-latency.png)
 
 | M | Triton (ms) | Torch Compiled (ms) | Naive (ms) | Persistent (ms) |
 |---|---|---|---|---|
@@ -256,4 +256,5 @@ The next step from here is online softmax (Milakov & Gimelshein 2018), which fus
 
 ---
 
-*Code: [softmax.py](softmax.py) | Compiler output exploration: [compile_generated_kernels.py](compile_generated_kernels.py)*
+*Code: [softmax.py](https://github.com/MrudhuhasM/GPU-Programming/blob/main/softmax/softmax.py) | Compiler output exploration: [compile_generated_kernels.py](https://github.com/MrudhuhasM/GPU-Programming/blob/main/softmax/compile_generated_kernels.py)*
+
