@@ -205,7 +205,7 @@ The interesting thing at low M is that persistent actually trails non-persistent
 
 ### Latency
 
-![Latency vs rows](images/softmax-performance-latency.png)
+![Latency vs rows](/images/softmax-performance-latency.png)
 
 | M | Triton (ms) | Torch Compiled (ms) | Naive (ms) | Persistent (ms) |
 |---|---|---|---|---|
