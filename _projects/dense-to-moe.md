@@ -6,6 +6,7 @@ status: in-progress
 stack: [PyTorch, GQA, MoE]
 summary: A GQA transformer with its own inference path, then the feed-forward block swapped for routed experts.
 repo: ""
+glyph: moe
 ---
 
 A study of what changes when a dense transformer becomes a mixture-of-experts model.

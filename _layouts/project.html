@@ -1,31 +1,53 @@
 ---
 layout: default
 ---
-<article class="doc">
-  <header class="doc-head">
-    <p class="doc-kicker">Project {{ page.order | prepend: "0" | slice: -2, 2 }}</p>
+{% assign related = site.posts | where: "project", page.key %}
+<article>
+  <header class="page-head" style="padding-bottom: 0">
+    <a class="back" href="{{ '/projects/' | relative_url }}">← projects</a>
     <h1>{{ page.title }}</h1>
-    {% if page.summary %}<p class="doc-summary">{{ page.summary }}</p>{% endif %}
+    {% if page.summary %}<p>{{ page.summary }}</p>{% endif %}
   </header>
 
-  <div class="doc-body">
-    <aside class="doc-meta">
-      <div><span class="label">Status</span>{% include status.html status=page.status %}</div>
-      {% if page.stack %}<div><span class="label">Stack</span>{{ page.stack | join: ", " }}</div>{% endif %}
-      {% if page.repo and page.repo != "" %}<div><span class="label">Code</span><a href="{{ page.repo }}" class="accent" rel="noopener">Repository ↗</a></div>{% endif %}
-      {% assign related = site.posts | where: "project", page.key %}
-      {% if related.size > 0 %}
-      <div><span class="label">Write-ups</span>
-        <ul class="plain">
-          {% for post in related %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-    </aside>
+  <dl class="facts" style="margin-top: 32px">
+    <div><dt>status</dt><dd>{% include status.html status=page.status %}</dd></div>
+    {% if page.stack %}<div><dt>stack</dt><dd>{{ page.stack | join: ", " }}</dd></div>{% endif %}
+    {% if page.repo and page.repo != "" %}<div><dt>code</dt><dd><a href="{{ page.repo }}" rel="noopener">GitHub ↗</a></dd></div>{% endif %}
+    {% if related.size > 0 %}<div><dt>write-ups</dt><dd>{{ related.size }}</dd></div>{% endif %}
+  </dl>
 
-    <div class="prose">
-      {{ content }}
-      <p class="doc-back"><a href="{{ '/projects/' | relative_url }}">← All projects</a></p>
+  {% if page.stages %}
+  <figure class="figure">
+    <div class="pipeline">
+      {% for s in page.stages %}
+        {% unless forloop.first %}<span class="stage-link" aria-hidden="true"></span>{% endunless %}
+        <span class="stage stage--{{ s.state | default: 'later' }}">
+          <span class="stage-box">{{ s.name }}</span>
+          <span class="stage-note">{% if s.state == 'done' %}done{% elsif s.state == 'now' %}in progress{% endif %}</span>
+        </span>
+      {% endfor %}
     </div>
+    {% if page.stages_caption %}<figcaption>{{ page.stages_caption }}</figcaption>{% endif %}
+  </figure>
+  {% elsif page.glyph %}
+  <figure class="figure"><div class="big-glyph">{% include glyphs/{{ page.glyph }}.html %}</div></figure>
+  {% endif %}
+
+  <div class="prose">
+    {{ content }}
   </div>
+
+  {% if related.size > 0 %}
+  <section class="section" style="padding-top: 48px">
+    <h2 class="label">Write-ups</h2>
+    <div class="post-list">
+      {% for post in related %}
+      <a class="row" href="{{ post.url | relative_url }}">
+        <span class="row-date">{{ post.date | date: "%Y-%m" }}</span>
+        <span class="row-body"><span class="row-title">{{ post.title }}</span></span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 </article>

@@ -6,6 +6,15 @@ status: in-progress
 stack: [PyTorch, TRL, RLHF, DPO, RLVR]
 summary: Instruction tuning, reward modeling, DPO-style methods, RL and verifiable-reward reasoning on a small model — each stage evaluated against the one before.
 repo: ""   # add the GitHub URL when the repo is public
+glyph: pipeline
+stages:
+  - {name: base, state: done}
+  - {name: SFT, state: now}
+  - {name: reward}
+  - {name: DPO}
+  - {name: RL}
+  - {name: RLVR}
+stages_caption: "The stages. Each one is evaluated against the one before it."
 ---
 
 The full post-training pipeline, built stage by stage on SmolLM2-135M. The model is small on purpose: cheap, repeatable experiments make ablations practical.
@@ -20,7 +29,3 @@ The full post-training pipeline, built stage by stage on SmolLM2-135M. The model
 6. RL with verifiable rewards and reasoning
 
 Each stage's result becomes the baseline for the next, with explicit evaluation at every step.
-
-## Status
-
-Currently on instruction tuning. Write-ups will be linked here as each stage lands.

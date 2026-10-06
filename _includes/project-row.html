@@ -1,0 +1,10 @@
+<a class="proj" href="{{ include.project.url | relative_url }}">
+  <span class="glyph">{% if include.project.glyph %}{% include glyphs/{{ include.project.glyph }}.html %}{% endif %}</span>
+  <span class="proj-body">
+    <span class="proj-top">
+      <span class="proj-title">{{ include.project.title }}</span>
+      {% include status.html status=include.project.status %}
+    </span>
+    <span class="proj-desc">{{ include.project.summary }}</span>
+  </span>
+</a>

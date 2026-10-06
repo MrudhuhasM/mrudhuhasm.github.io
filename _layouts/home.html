@@ -2,25 +2,24 @@
 layout: default
 ---
 <section class="intro">
-  <div class="intro-text">
-    <p class="intro-lede">Machine learning engineer working on reinforcement learning for LLM post-training, and on deep learning performance on GPUs.</p>
-    <p class="intro-sub">Eight years across classical ML, NLP and LLMs. This site collects the projects I build and what I learn building them.</p>
-  </div>
-  {% include facts.html %}
+  <h1>Hi, I'm {{ site.author.name }}.</h1>
+  {{ content }}
+  <p class="links">
+    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    <a href="https://github.com/{{ site.social.github }}" rel="noopener">github</a>
+    <a href="https://www.kaggle.com/{{ site.social.kaggle }}" rel="noopener">kaggle</a>
+    <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" rel="noopener">linkedin</a>
+    <a href="https://x.com/{{ site.social.twitter }}" rel="noopener">x</a>
+  </p>
 </section>
 
 <section class="section">
-  <div class="section-head">
-    <h2>01 — Projects</h2>
-    <a href="{{ '/projects/' | relative_url }}" class="accent">All projects →</a>
-  </div>
-  {% include project-table.html %}
+  <h2 class="label">Projects</h2>
+  {% include project-list.html limit=site.home_projects %}
+  {% if site.projects.size > site.home_projects %}<a class="more" href="{{ '/projects/' | relative_url }}">all projects →</a>{% endif %}
 </section>
 
 <section class="section">
-  <div class="section-head">
-    <h2>02 — Writing</h2>
-    <a href="{{ '/writing/' | relative_url }}" class="accent">All writing →</a>
-  </div>
-  {% include writing-table.html limit=site.home_posts %}
+  <h2 class="label">Writing</h2>
+  {% include writing-list.html limit=site.home_posts %}
 </section>

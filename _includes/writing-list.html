@@ -1,0 +1,22 @@
+{%- comment -%} Non-archived posts, newest first, then one row pointing at the archive. Pass limit=N to cap. {%- endcomment -%}
+{% assign limit = include.limit | default: 1000 %}
+{% assign shown = 0 %}
+{% assign archived_count = 0 %}
+{% for post in site.posts %}{% if post.archived %}{% assign archived_count = archived_count | plus: 1 %}{% endif %}{% endfor %}
+<div class="post-list">
+  {% for post in site.posts %}{% unless post.archived %}{% if shown < limit %}
+  <a class="row" href="{{ post.url | relative_url }}">
+    <span class="row-date">{{ post.date | date: "%Y-%m" }}</span>
+    <span class="row-body">
+      <span class="row-title">{{ post.title }}</span>
+      {% if include.summaries and post.summary %}<span class="row-desc">{{ post.summary }}</span>{% endif %}
+    </span>
+  </a>
+  {% assign shown = shown | plus: 1 %}{% endif %}{% endunless %}{% endfor %}
+  {% if archived_count > 0 %}
+  <a class="row row--archive" href="{{ '/archive/' | relative_url }}">
+    <span class="row-date">2022–24</span>
+    <span class="row-body"><span class="row-title">Archive: {{ archived_count }} earlier posts on classical NLP and ML <span class="accent">→</span></span></span>
+  </a>
+  {% endif %}
+</div>

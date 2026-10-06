@@ -1,0 +1,6 @@
+{%- comment -%} Projects from _projects/, sorted by `order`. Pass limit=N to cap. {%- endcomment -%}
+{% assign limit = include.limit | default: 1000 %}
+{% assign projects = site.projects | sort: "order" %}
+<div class="proj-list">
+  {% for p in projects limit: limit %}{% include project-row.html project=p %}{% endfor %}
+</div>

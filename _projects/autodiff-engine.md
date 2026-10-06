@@ -6,6 +6,7 @@ status: in-progress
 stack: [Python, NumPy]
 summary: Reverse-mode autodiff from scalars to tensors, with layers, losses and optimizers. Done when an MLP trains on it and gradients match PyTorch.
 repo: ""
+glyph: graph
 ---
 
 A reverse-mode automatic differentiation engine, built from scratch.

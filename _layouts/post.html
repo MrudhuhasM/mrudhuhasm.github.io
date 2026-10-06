@@ -2,51 +2,53 @@
 layout: default
 ---
 {%- assign words = content | number_of_words -%}
-{%- assign mins = words | divided_by: 200 | plus: 1 -%}
+{%- assign mins = words | divided_by: 220 | plus: 1 -%}
 {%- assign project = site.projects | where: "key", page.project | first -%}
-<article class="doc">
-  <header class="doc-head">
-    {% if page.archived %}<p class="doc-kicker">From the archive</p>{% endif %}
+<article>
+  <header class="post-head">
+    {% if page.archived %}<p class="kicker"><a href="{{ '/archive/' | relative_url }}">archive</a> · {{ page.date | date: "%Y" }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+      <span>{{ mins }} min</span>
+      {% if page.tags and page.tags.size > 0 %}<span>{{ page.tags | slice: 0, 4 | join: " · " | downcase }}</span>{% endif %}
+    </p>
   </header>
 
-  <div class="doc-body">
-    <aside class="doc-meta">
-      <div><span class="label">Published</span>{{ page.date | date: "%-d %b %Y" }}</div>
-      <div><span class="label">Reading</span>{{ mins }} min</div>
-      {% if project %}
-      <div><span class="label">Project</span><a href="{{ project.url | relative_url }}" class="accent">{{ project.order | prepend: "0" | slice: -2, 2 }} {{ project.title }}</a></div>
-      {% endif %}
-      {% if page.tags and page.tags.size > 0 %}
-      <div><span class="label">Tags</span>{{ page.tags | join: ", " }}</div>
-      {% endif %}
-      <nav class="doc-toc" aria-label="Contents" hidden>
-        <span class="label">Contents</span>
-        <ol></ol>
-      </nav>
-    </aside>
+  <nav class="toc" aria-label="Contents" hidden><span class="toc-label">contents</span></nav>
 
-    <div class="prose">
-      {% if page.archived %}
-      <p class="note">This is an older post, kept for reference. Newer work is under <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p>
-      {% endif %}
+  {% if page.archived %}
+  <p class="note">An older post, kept as it was written. Newer work is under <a href="{{ '/writing/' | relative_url }}">writing</a> and <a href="{{ '/projects/' | relative_url }}">projects</a>.</p>
+  {% endif %}
 
-      {% if page.series %}
-      {% assign series_members = site.posts | where: "series", page.series | sort: "series_part" %}
-      <div class="series">
-        <p class="label">{{ page.series }} · {{ series_members | size }}-part series</p>
-        <ol>
-          {% for part in series_members %}
-          <li>{% if part.url == page.url %}<span aria-current="page">{{ part.title }}</span>{% else %}<a href="{{ part.url | relative_url }}">{{ part.title }}</a>{% endif %}</li>
-          {% endfor %}
-        </ol>
-      </div>
-      {% endif %}
-
-      {{ content }}
-
-      <p class="doc-back"><a href="{% if page.archived %}{{ '/archive/' | relative_url }}{% else %}{{ '/writing/' | relative_url }}{% endif %}">← {% if page.archived %}Archive{% else %}All writing{% endif %}</a></p>
-    </div>
+  {% if page.series %}
+  {% assign series_members = site.posts | where: "series", page.series | sort: "series_part" %}
+  <div class="series">
+    <p>{{ page.series | downcase }} · {{ series_members | size }}-part series</p>
+    <ol>
+      {% for part in series_members %}
+      <li>{% if part.url == page.url %}<span aria-current="page">{{ part.title }}</span>{% else %}<a href="{{ part.url | relative_url }}">{{ part.title }}</a>{% endif %}</li>
+      {% endfor %}
+    </ol>
   </div>
+  {% endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if project %}
+  <p class="post-foot">Part of the project <a href="{{ project.url | relative_url }}">{{ project.title }}</a>.</p>
+  {% endif %}
+
+  <nav class="post-nav" aria-label="More writing">
+    {% if page.previous and page.previous.archived == page.archived %}
+    <a href="{{ page.previous.url | relative_url }}"><span>← older</span>{{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next and page.next.archived == page.archived %}
+    <a class="next" href="{{ page.next.url | relative_url }}"><span>newer →</span>{{ page.next.title }}</a>
+    {% else %}
+    <a class="next" href="{% if page.archived %}{{ '/archive/' | relative_url }}{% else %}{{ '/writing/' | relative_url }}{% endif %}"><span>{% if page.archived %}archive{% else %}writing{% endif %}</span>All posts →</a>
+    {% endif %}
+  </nav>
 </article>
-<script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>

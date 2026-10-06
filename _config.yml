@@ -1,5 +1,5 @@
 title: Mrudhuhas
-description: Machine learning engineer working on reinforcement learning for LLM post-training and deep learning performance on GPUs.
+description: Machine learning engineer working on reinforcement learning for language models.
 url: 'https://mrudhuhasm.github.io'
 baseurl: ''
 lang: en
@@ -7,7 +7,7 @@ lang: en
 author:
   name: Mrudhuhas
   email: mrudhuhas@gmail.com
-  location: India · working remotely
+  location: India, working remotely
   open_to: Full-time, contract, part-time
 
 social:
@@ -18,16 +18,17 @@ social:
 
 # Top navigation, in order
 nav:
-  - title: Projects
+  - title: projects
     url: /projects/
-  - title: Writing
+  - title: writing
     url: /writing/
-  - title: Archive
+  - title: archive
     url: /archive/
-  - title: About
+  - title: about
     url: /about/
 
-# How many recent (non-archived) posts the homepage shows
+# How many projects and recent (non-archived) posts the homepage shows
+home_projects: 4
 home_posts: 3
 
 permalink: /posts/:title/
