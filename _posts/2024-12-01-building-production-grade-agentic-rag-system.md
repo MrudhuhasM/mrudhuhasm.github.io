@@ -4,6 +4,7 @@ date: 2024-12-01
 tags: [rag, langgraph, nlp, llm, vector-databases]
 description: "Deep dive into building a production-ready agentic RAG system with hybrid search, multi-step reasoning, and intelligent answer validation"
 math: true
+archived: true
 ---
 
 

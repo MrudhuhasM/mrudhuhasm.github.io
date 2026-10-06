@@ -1,0 +1,23 @@
+{%- comment -%}
+  Renders the projects table. Projects live in _projects/ and are sorted by `order`.
+{%- endcomment -%}
+{% assign projects = site.projects | sort: "order" %}
+<div class="table" role="table" aria-label="Projects">
+  <div class="row row--head" role="row">
+    <span role="columnheader">No.</span>
+    <span role="columnheader">Project</span>
+    <span role="columnheader" class="col-c">Stack</span>
+    <span role="columnheader" class="col-d">Status</span>
+  </div>
+  {% for p in projects %}
+  <a class="row" role="row" href="{{ p.url | relative_url }}">
+    <span class="col-a" role="cell">{{ p.order | prepend: "0" | slice: -2, 2 }}</span>
+    <span class="col-b" role="cell">
+      <span class="row-title">{{ p.title }}</span>
+      <span class="row-desc">{{ p.summary }}</span>
+    </span>
+    <span class="col-c" role="cell">{{ p.stack | join: ", " }}</span>
+    <span class="col-d" role="cell">{% include status.html status=p.status %}</span>
+  </a>
+  {% endfor %}
+</div>

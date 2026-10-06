@@ -5,6 +5,7 @@ categories: [Machine_Learning, Overfitting]
 tags: [machine-learning, overfitting, regularization]
 comments: false
 math: true
+archived: true
 ---
 
 

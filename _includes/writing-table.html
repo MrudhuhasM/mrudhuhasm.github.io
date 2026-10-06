@@ -1,0 +1,31 @@
+{%- comment -%}
+  Non-archived posts, newest first. Pass limit=N to cap the list; the archive row is always last.
+{%- endcomment -%}
+{% assign limit = include.limit | default: 1000 %}
+{% assign shown = 0 %}
+{% assign archived_count = 0 %}
+{% for post in site.posts %}{% if post.archived %}{% assign archived_count = archived_count | plus: 1 %}{% endif %}{% endfor %}
+<div class="table" role="table" aria-label="Writing">
+  <div class="row row--head" role="row">
+    <span role="columnheader">Date</span>
+    <span role="columnheader">Title</span>
+    <span role="columnheader" class="col-c">Topics</span>
+    <span role="columnheader" class="col-d">Length</span>
+  </div>
+  {% for post in site.posts %}
+    {% unless post.archived %}
+      {% if shown < limit %}
+        {% include post-row.html post=post %}
+        {% assign shown = shown | plus: 1 %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+  {% if archived_count > 0 %}
+  <a class="row row--archive" role="row" href="{{ '/archive/' | relative_url }}">
+    <span class="col-a" role="cell">2022–<br>2024</span>
+    <span class="col-b" role="cell">Archive — earlier writing on NLP and classical ML</span>
+    <span class="col-c" role="cell">NLP, ML</span>
+    <span class="col-d" role="cell">{{ archived_count }} posts <span class="accent">→</span></span>
+  </a>
+  {% endif %}
+</div>

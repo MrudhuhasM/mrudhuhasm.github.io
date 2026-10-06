@@ -5,6 +5,7 @@ categories: [Natural_Language_Processing, Semantic_Analysis]
 tags: [NLP, Semantic_Analysis, Topic_Modeling, LSA, LDA]
 comments: false
 math: true
+archived: true
 ---
 
 In our increasingly data-driven world, there’s a growing need to move beyond simple keyword matching when it comes to understanding text. Whether you're building a smarter search engine or summarizing vast libraries of documents, keyword-based approaches often fall short. Enter **topic modeling**—an incredibly powerful tool that lets us explore **meaning** by diving into the relationships between words and documents.

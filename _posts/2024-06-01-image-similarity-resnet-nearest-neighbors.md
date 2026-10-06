@@ -4,6 +4,7 @@ date: 2024-06-01
 tags: [computer-vision, image-similarity, resnet, nearest-neighbors]
 description: "Building an image similarity search system using ResNet50 feature extraction and k-nearest neighbors"
 math: true
+archived: true
 ---
 
 

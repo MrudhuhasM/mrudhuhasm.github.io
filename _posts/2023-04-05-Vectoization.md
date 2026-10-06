@@ -5,6 +5,7 @@ categories: [Natural_Language_Processing, Vectorization]
 tags: [NLP, Vectorization, Word_Embeddings, TF-IDF, BOW]
 comments: false
 math: true
+archived: true
 ---
 
 When we talk about language, words carry meaning, but to a computer, words are just gibberish. How do we make computers understand text? The answer lies in **vectorization**—the magical process of transforming words, sentences, or even entire documents into numbers that machine learning models can process. Vectorization is a critical bridge between human language and machine learning.

@@ -3,6 +3,7 @@ title: "Sentiment Analysis: From Bag of Words to Word Embeddings"
 date: 2024-03-01
 tags: [nlp, sentiment-analysis, word2vec, fasttext, word-embeddings]
 description: "Comparing traditional bag-of-words with modern word embedding approaches for sentiment classification"
+archived: true
 ---
 
 

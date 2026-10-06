@@ -5,6 +5,7 @@ categories: [Natural_Language_Processing, Embeddings]
 tags: [machine-learning, embeddings, natural-language-processing]
 comments: false
 math: true
+archived: true
 ---
 
 The history of Language AI is filled with notable milestones, all united by the goal of enabling machines to effectively understand and generate human language. Over the decades, there have been remarkable advancements in algorithms, neural networks, and computational linguistics, all working towards bridging the gap between human communication and machine comprehension. However, human language remains inherently complex and nuanced, presenting unique challenges for traditional computational methods.

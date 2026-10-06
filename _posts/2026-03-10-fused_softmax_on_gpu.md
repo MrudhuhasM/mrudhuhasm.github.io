@@ -4,6 +4,8 @@ date: 2026-03-10
 tags: [gpu, pytorch, triton, softmax, optimization]
 description: "Exploring the journey from naive PyTorch softmax to highly optimized persistent Triton kernels on GPU."
 math: true
+project: fused-softmax-triton
+summary: "Four implementations, benchmarked across matrix shapes — and where the memory traffic actually goes."
 ---
 
 

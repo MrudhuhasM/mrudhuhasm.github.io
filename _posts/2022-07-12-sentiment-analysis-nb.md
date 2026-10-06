@@ -5,6 +5,7 @@ categories: [Natural_Language_Processing, Text_Classification]
 tags: [machine-learning, text-classification, sentiment-analysis, naive-bayes,nlp]
 comments: false
 math: true
+archived: true
 ---
 
 Classification is a fundamental aspect of both human and machine intelligence. In this blog, we'll explore a specific text classification problem: sentiment analysis. The most common approach to text classification in natural language processing involves supervised machine learning. Formally, the task of supervised classification is to take an input $x$ and a fixed set of output classes $Y = \{y_1, y_2, \dots, y_m\}$, and return a predicted class $y \in Y$. In the context of text classification, we often refer to the output variable as c (for "class") and the input variable as d (for "document"). In a supervised setting, we have a training set of N documents, each labeled with a class: $\{(d_1, c_1), \dots, (d_N, c_N)\}$. The objective is to train a classifier that can accurately map a new document d to its correct class c, where C represents a set of relevant document classes. A probabilistic classifier not only predicts the class but also provides the probability of the document belonging to each class. This full probability distribution can be valuable for making more informed downstream decisions, as it allows us to delay making discrete decisions, which can be beneficial when integrating multiple systems.

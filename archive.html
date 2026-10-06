@@ -1,0 +1,15 @@
+---
+layout: listing
+title: Archive
+permalink: /archive/
+summary: Earlier writing, 2022–2024 — mostly NLP and classical machine learning. Kept for reference.
+---
+<div class="table" role="table" aria-label="Archive">
+  <div class="row row--head" role="row">
+    <span role="columnheader">Date</span>
+    <span role="columnheader">Title</span>
+    <span role="columnheader" class="col-c">Topics</span>
+    <span role="columnheader" class="col-d">Length</span>
+  </div>
+  {% for post in site.posts %}{% if post.archived %}{% include post-row.html post=post %}{% endif %}{% endfor %}
+</div>

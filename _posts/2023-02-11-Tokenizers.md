@@ -4,6 +4,7 @@ date: 2023-02-11
 categories: [Natural_Language_Processing, Tokenization]
 tags: [NLP, Tokenization, NLTK, spaCy, Hugging_Face]
 comments: false
+archived: true
 ---
 
 When you interact with a virtual assistant like Siri or Google Assistant, or translate a webpage in your browser, something magical is happening under the hood—your words are being broken down into smaller, manageable pieces that machines can understand. This process is called **tokenization**, and it's the first and perhaps most important step in any Natural Language Processing (NLP) pipeline.

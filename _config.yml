@@ -1,11 +1,14 @@
 title: Mrudhuhas
-description: Machine Learning Engineer — NLP, LLMs, Production AI
+description: Machine learning engineer working on reinforcement learning for LLM post-training and deep learning performance on GPUs.
 url: 'https://mrudhuhasm.github.io'
 baseurl: ''
+lang: en
 
 author:
   name: Mrudhuhas
   email: mrudhuhas@gmail.com
+  location: India · working remotely
+  open_to: Full-time, contract, part-time
 
 social:
   github: MrudhuhasM
@@ -13,7 +16,26 @@ social:
   twitter: _mrudhu_
   linkedin: mrudhuhas
 
+# Top navigation, in order
+nav:
+  - title: Projects
+    url: /projects/
+  - title: Writing
+    url: /writing/
+  - title: Archive
+    url: /archive/
+  - title: About
+    url: /about/
+
+# How many recent (non-archived) posts the homepage shows
+home_posts: 3
+
 permalink: /posts/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 markdown: kramdown
 kramdown:
@@ -29,6 +51,11 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 
 plugins:
   - jekyll-feed
@@ -37,5 +64,10 @@ exclude:
   - LICENSE
   - README.md
   - "*.gemspec"
+  - Gemfile
+  - Gemfile.lock
   - node_modules/
   - vendor/
+  - .devcontainer/
+  - .pytest_cache/
+  - .vscode/

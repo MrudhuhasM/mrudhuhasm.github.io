@@ -7,6 +7,8 @@ comments: false
 math: true
 series: "Text Classification"
 series_part: 1
+archived: true
+permalink: /posts/text-classification-bow-to-transformers/
 ---
 
 

@@ -4,6 +4,7 @@ date: 2024-09-01
 tags: [linear-regression, statistics, python, machine-learning]
 description: "Step-by-step guide to simple linear regression: implementing OLS estimation, hypothesis testing, and model evaluation from scratch"
 math: true
+archived: true
 ---
 
   

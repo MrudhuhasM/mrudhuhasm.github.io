@@ -5,6 +5,7 @@ categories: [Natural_Language_Processing, Text_Classification]
 tags: [machine-learning, sentiment-analysis, logistic-regression,nlp]
 comments: false
 math: true
+archived: true
 ---
 
 In previous posts, we explored sentiment analysis using a simple bag-of-words model and Naive Bayes. In this post, we will delve into sentiment analysis with logistic regression. Unlike Naive Bayes, which is a generative model, logistic regression is a discriminative model. The key difference lies in their approach: a generative model estimates the joint probability of the features and the target variable, whereas a discriminative model estimates the conditional probability of the target variable given the features.

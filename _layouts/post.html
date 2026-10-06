@@ -1,59 +1,52 @@
 ---
 layout: default
 ---
-
-<article>
-  <a href="{{ '/' | relative_url }}" class="back-link">← Home</a>
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">
-      <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-      {% if page.tags and page.tags.size > 0 %}
-      <div class="post-tags">
-        {% for tag in page.tags %}
-        <span class="post-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </div>
+{%- assign words = content | number_of_words -%}
+{%- assign mins = words | divided_by: 200 | plus: 1 -%}
+{%- assign project = site.projects | where: "key", page.project | first -%}
+<article class="doc">
+  <header class="doc-head">
+    {% if page.archived %}<p class="doc-kicker">From the archive</p>{% endif %}
+    <h1>{{ page.title }}</h1>
   </header>
 
-  <div class="post-content">
-    {% if page.series %} {% assign series_members = site.posts | where:
-    "series", page.series | sort: "series_part" %} {% assign series_count =
-    series_members | size %}
-    <div class="series-nav">
-      <p class="series-nav-title">
-        {{ page.series }}
-        <span class="series-nav-count">{{ series_count }}-part series</span>
-      </p>
-      <ol class="series-nav-list">
-        {% for part in series_members %} {% if part.url == page.url %}
-        <li class="series-nav-current">
-          <span>Part {{ part.series_part }}: {{ part.title }}</span>
-        </li>
-        {% else %}
-        <li>
-          <a href="{{ part.url | relative_url }}"
-            >Part {{ part.series_part }}: {{ part.title }}</a
-          >
-        </li>
-        {% endif %} {% endfor %}
-      </ol>
-    </div>
-    {% endif %} {{ content }}
-  </div>
+  <div class="doc-body">
+    <aside class="doc-meta">
+      <div><span class="label">Published</span>{{ page.date | date: "%-d %b %Y" }}</div>
+      <div><span class="label">Reading</span>{{ mins }} min</div>
+      {% if project %}
+      <div><span class="label">Project</span><a href="{{ project.url | relative_url }}" class="accent">{{ project.order | prepend: "0" | slice: -2, 2 }} {{ project.title }}</a></div>
+      {% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+      <div><span class="label">Tags</span>{{ page.tags | join: ", " }}</div>
+      {% endif %}
+      <nav class="doc-toc" aria-label="Contents" hidden>
+        <span class="label">Contents</span>
+        <ol></ol>
+      </nav>
+    </aside>
 
-  <nav class="post-nav">
-    {% if page.previous.url %}
-    <a href="{{ page.previous.url | relative_url }}" class="nav-newer"
-      >← {{ page.previous.title }}</a
-    >
-    {% endif %} {% if page.next.url %}
-    <a href="{{ page.next.url | relative_url }}" class="nav-older"
-      >{{ page.next.title }} →</a
-    >
-    {% endif %}
-  </nav>
+    <div class="prose">
+      {% if page.archived %}
+      <p class="note">This is an older post, kept for reference. Newer work is under <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p>
+      {% endif %}
+
+      {% if page.series %}
+      {% assign series_members = site.posts | where: "series", page.series | sort: "series_part" %}
+      <div class="series">
+        <p class="label">{{ page.series }} · {{ series_members | size }}-part series</p>
+        <ol>
+          {% for part in series_members %}
+          <li>{% if part.url == page.url %}<span aria-current="page">{{ part.title }}</span>{% else %}<a href="{{ part.url | relative_url }}">{{ part.title }}</a>{% endif %}</li>
+          {% endfor %}
+        </ol>
+      </div>
+      {% endif %}
+
+      {{ content }}
+
+      <p class="doc-back"><a href="{% if page.archived %}{{ '/archive/' | relative_url }}{% else %}{{ '/writing/' | relative_url }}{% endif %}">← {% if page.archived %}Archive{% else %}All writing{% endif %}</a></p>
+    </div>
+  </div>
 </article>
+<script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
