@@ -7,7 +7,6 @@ math: true
 ---
 
 
-# Image Similarity Search with ResNet and Nearest Neighbors
 
 Content-based image retrieval finds visually similar images without textual metadata. Traditional approaches using handcrafted features (SIFT, SURF, color histograms) require domain expertise and struggle with semantic similarity. Deep learning feature extraction from pre-trained CNNs captures high-level visual patterns enabling semantic similarity search.
 

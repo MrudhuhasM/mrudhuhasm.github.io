@@ -9,7 +9,6 @@ series: "Text Classification"
 series_part: 1
 ---
 
-# Text Classification: From Bag of Words (BOW) to Transformers
 
 Text classification is a core task in natural language processing (NLP) that involves categorizing text into predefined labels or categories. This process is used across many applications, such as **sentiment analysis**, **spam detection**, **language identification**, and **topic categorization**.
 

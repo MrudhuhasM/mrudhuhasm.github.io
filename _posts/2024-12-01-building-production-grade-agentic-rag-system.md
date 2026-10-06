@@ -7,7 +7,6 @@ math: true
 ---
 
 
-# Building a Production-Grade Agentic RAG System
 
 Basic RAG implementations—embed query, retrieve documents, pass to LLM, return response—break down when applied to complex domains requiring nuanced understanding. The standard pipeline provides no quality control, making it unsuitable for querying philosophical texts where accuracy and grounding matter.
 

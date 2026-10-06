@@ -6,7 +6,6 @@ description: "Exploring the journey from naive PyTorch softmax to highly optimiz
 math: true
 ---
 
-# Fused Softmax on GPU: From Naive PyTorch to Persistent Triton Kernels
 
 Softmax is one of those operations that looks trivial on paper but turns into a genuine systems problem on GPU. The math is:
 

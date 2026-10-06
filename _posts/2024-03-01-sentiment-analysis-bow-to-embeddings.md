@@ -5,7 +5,6 @@ tags: [nlp, sentiment-analysis, word2vec, fasttext, word-embeddings]
 description: "Comparing traditional bag-of-words with modern word embedding approaches for sentiment classification"
 ---
 
-# Sentiment Analysis: From Bag of Words to Word Embeddings
 
 Sentiment analysis requires converting text into numerical representations. Traditional approaches like Bag of Words (BOW) treat words as independent tokens, discarding order and semantic relationships. Word embeddings (Word2Vec, FastText) capture semantic similarity in dense vector spaces, potentially improving classification performance.
 
